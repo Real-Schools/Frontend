@@ -16,6 +16,10 @@ const Login = Loadable(lazy(() => import("./pages/authentication/Login")));
 const UsersPage = Loadable(lazy(() => import("./pages/users")));
 const DashboardPage = Loadable(lazy(() => import("./pages/dashboard")));
 const StudentsPage = Loadable(lazy(() => import("./pages/students")));
+const StudentProfilePage = Loadable(
+  lazy(() => import("./pages/students/Profile"))
+);
+const BranchesPage = Loadable(lazy(() => import("./pages/branches")));
 const RegisterStudentPage = Loadable(
   lazy(() => import("./pages/students/Register"))
 );
@@ -63,6 +67,14 @@ const routes: RouteObject[] = [
         ),
       },
       {
+        path: "branches",
+        element: (
+          <AuthGuard>
+            <BranchesPage />
+          </AuthGuard>
+        ),
+      },
+      {
         path: "students",
         element: (
           <AuthGuard>
@@ -79,10 +91,18 @@ const routes: RouteObject[] = [
         ),
       },
       {
+        path: "students/:id/profile",
+        element: (
+          <AuthGuard>
+            <StudentProfilePage />
+          </AuthGuard>
+        ),
+      },
+      {
         path: "teachers",
         element: (
           <AuthGuard>
-            <UsersPage />
+            <></>
           </AuthGuard>
         ),
       },

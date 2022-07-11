@@ -3,24 +3,24 @@
  * @email paulmugaya@live.com
  * @create date 2022-06-24 10:57:38
  * @modify date 2022-06-24 10:57:38
- * @desc https://codepen.io/knyttneve/pen/vYEzXOR
+ * @desc Branches
  */
 
 import { useQuery } from "@apollo/client";
-import { GET_USERS } from "Api/graphql";
+import { GET_BRANCHES } from "Api/graphql";
 import Page from "Components/Page";
 import PageContent from "Components/PageContent";
 import Table from "Components/Table";
-import CreateUser from "./createUser";
+import Create from "./create";
 
-const UsersPage = () => {
-  const { loading, error, data, refetch } = useQuery(GET_USERS);
+const BranchesPage = () => {
+  const { loading, error, data, refetch } = useQuery(GET_BRANCHES);
 
   return (
     <Page
-      title="Users"
+      title="Branches"
       overFlowHidden
-      headerExtra={[<CreateUser key={1} onUpdate={refetch} />]}
+      headerExtra={[<Create key={1} onUpdate={refetch} />]}
       error={error}
     >
       <PageContent loading={loading}>
@@ -31,23 +31,23 @@ const UsersPage = () => {
               accessor: "id",
             },
             {
-              Header: "Email",
-              accessor: "email",
+              Header: "Name",
+              accessor: "name",
             },
             {
-              Header: "Role",
-              accessor: "role",
+              Header: "Location",
+              accessor: "location",
+            },
+            {
+              Header: "Prefix",
+              accessor: "prefix",
             },
           ]}
-          data={
-            data?.users.map((user: any) => {
-              return { ...user, role: "admin" };
-            }) || []
-          }
+          data={data?.branches || []}
         />
       </PageContent>
     </Page>
   );
 };
 
-export default UsersPage;
+export default BranchesPage;

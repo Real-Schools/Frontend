@@ -36,8 +36,72 @@ export const CREATE_USER = gql`
     createUser(input: $input) {
       user {
         id
-        email
       }
+    }
+  }
+`;
+
+export const GET_BRANCHES = gql`
+  query {
+    branches {
+      id
+      name
+      location
+      prefix
+    }
+  }
+`;
+
+export const CREATE_BRANCH = gql`
+  mutation CreateBranch($input: CreateBranchInput!) {
+    createBranch(input: $input) {
+      branch {
+        id
+      }
+    }
+  }
+`;
+
+export const GET_STUDENTS = gql`
+  query {
+    students {
+      id
+      email
+      firstName
+      lastName
+      otherNames
+      level
+      studentNumber
+      branchId
+      enrolledAt
+      createdAt
+    }
+  }
+`;
+
+export const REGISTER_STUDENT = gql`
+  mutation CreateStudent($input: CreateStudentInput!) {
+    createStudent(input: $input) {
+      student {
+        id
+      }
+    }
+  }
+`;
+
+export const GET_STUDENT = (id: string | number) => gql`
+  query {
+    student(id: ${id}) {
+      id
+      email
+      firstName
+      lastName
+      otherNames
+      level
+      studentNumber
+      branchId
+      enrolledAt
+      createdAt
     }
   }
 `;
