@@ -19,6 +19,7 @@ const LoginJWT: FC = () => {
 
     try {
       await login(email, password);
+      window.location.reload();
       setSubmitting(false);
     } catch (err: any) {
       setSubmitting(false);

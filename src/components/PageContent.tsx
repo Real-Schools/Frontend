@@ -19,7 +19,7 @@ const PageContent: FC<PageContentProps> = (props) => {
 
   return (
     <div className={classNames("container w-screen mx-auto px-4 sm:px-8", {})}>
-      <div className="py-20">
+      <div className="py-20 px-8">
         {loading ? <Skeleton active /> : <>{props.children}</>}
       </div>
     </div>
