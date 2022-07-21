@@ -23,7 +23,8 @@
       "Types/*": ["src/types/*"],
       "Styles/*": ["src/styles/*"],
       "Hooks/*": ["src/hooks/*"],
-      "Api/*": ["src/api/*"]
+      "Api/*": ["src/api/*"],
+      "Assets/*": ["src/assets/*"]
     }
   },
   "include": ["src"],

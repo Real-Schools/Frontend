@@ -2,7 +2,7 @@ import { ApolloProvider } from "@apollo/client";
 import "antd/dist/antd.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "Styles/app.less";
 import "virtual:windi.css";
 import { graphqlClient } from "./api/graphql";
@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <ApolloProvider client={graphqlClient}>
         <AppProvider>
           <AuthProvider>
@@ -25,7 +25,7 @@ root.render(
           </AuthProvider>
         </AppProvider>
       </ApolloProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 

@@ -71,6 +71,7 @@ export const GET_STUDENTS = gql`
       lastName
       otherNames
       level
+      bio
       studentNumber
       branchId
       enrolledAt
@@ -98,6 +99,7 @@ export const GET_STUDENT = (id: string | number) => gql`
       lastName
       otherNames
       level
+      bio
       studentNumber
       branchId
       enrolledAt

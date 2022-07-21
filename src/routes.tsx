@@ -19,7 +19,10 @@ const StudentsPage = Loadable(lazy(() => import("./pages/students")));
 const StudentProfilePage = Loadable(
   lazy(() => import("./pages/students/Profile"))
 );
+const PaymentsPage = Loadable(lazy(() => import("./pages/payments")));
+const SettingsPage = Loadable(lazy(() => import("./pages/settings")));
 const BranchesPage = Loadable(lazy(() => import("./pages/branches")));
+const TeachersPage = Loadable(lazy(() => import("./pages/teachers")));
 const RegisterStudentPage = Loadable(
   lazy(() => import("./pages/students/Register"))
 );
@@ -102,7 +105,7 @@ const routes: RouteObject[] = [
         path: "teachers",
         element: (
           <AuthGuard>
-            <></>
+            <TeachersPage />
           </AuthGuard>
         ),
       },
@@ -111,6 +114,22 @@ const routes: RouteObject[] = [
         element: (
           <AuthGuard>
             <UsersPage />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: "payments",
+        element: (
+          <AuthGuard>
+            <PaymentsPage />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: "settings",
+        element: (
+          <AuthGuard>
+            <SettingsPage />
           </AuthGuard>
         ),
       },

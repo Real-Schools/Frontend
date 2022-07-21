@@ -12,6 +12,7 @@ import React, { ReactElement, useEffect, useState } from "react";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import { FaSchool, FaUsers } from "react-icons/fa";
 
+import AppLogo from "Assets/icon.png";
 import {
   FiCreditCard,
   FiHome,
@@ -135,7 +136,7 @@ const SideBar = () => {
         }`}
         to="/"
       >
-        <img src="/src/assets/icon.png" className="w-8 h-8" />
+        <img src={AppLogo} className="w-8 h-8" />
         {!collapsed && (
           <span className="ml-2 text-sm font-bold">Real Schools</span>
         )}

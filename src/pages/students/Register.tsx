@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 interface CreateStudentResponse {
   id: string | number;
-
   createStudent: {
     student: {
       id: string | number;
@@ -19,7 +18,7 @@ interface CreateStudentResponse {
 }
 
 type StudentInput = {
-  email: string;
+  bio: string;
   firstName: string;
   lastName: string;
   otherNames: string;
@@ -39,7 +38,7 @@ export default function RegisterStudent() {
       REGISTER_STUDENT
     );
   const [student, setStudent] = useState<StudentInput>({
-    email: "",
+    bio: "",
     firstName: "",
     lastName: "",
     otherNames: "",
@@ -89,7 +88,7 @@ export default function RegisterStudent() {
 
                 <div className="flex flex-col">
                   <label className="font-medium text-sm text-stone-600">
-                    LAST NAME
+                    OTHER NAMES
                   </label>
                   <Input
                     type="text"
@@ -113,12 +112,12 @@ export default function RegisterStudent() {
 
                 <div className="flex flex-col">
                   <label className="font-medium text-sm text-stone-600">
-                    EMAIL
+                    BIO
                   </label>
                   <Input
-                    type="email"
-                    placeholder="johndoe@example.com"
-                    name="email"
+                    type="text"
+                    placeholder="Bio..."
+                    name="bio"
                     onChange={onChange}
                   />
                 </div>

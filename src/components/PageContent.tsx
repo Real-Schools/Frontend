@@ -6,7 +6,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 
 interface PageContentProps {
   children: ReactNode;
-  loading: boolean;
+  loading?: boolean;
 }
 
 const PageContent: FC<PageContentProps> = (props) => {
@@ -14,7 +14,7 @@ const PageContent: FC<PageContentProps> = (props) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(props.loading);
+    setLoading(props.loading || false);
   }, [props.loading]);
 
   return (

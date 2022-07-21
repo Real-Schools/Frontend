@@ -10,6 +10,6 @@ export type StudentType = {
   avatar?: string;
   select?: boolean;
   highlight?: boolean;
-  bio?: string;
-  studentNumber?: string;
+  bio: string;
+  studentNumber: string;
 };

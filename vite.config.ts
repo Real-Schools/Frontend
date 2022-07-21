@@ -15,6 +15,7 @@ export default defineConfig({
       Styles: resolve("./src/styles"),
       Hooks: resolve("./src/hooks"),
       Api: resolve("./src/api"),
+      Assets: resolve("./src/assets"),
     },
   },
 });
